@@ -1,0 +1,40 @@
+.product-box{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.product-img{
+    width: 30%;
+    margin: 30px;
+    /* border: 2px solid red; */
+}
+
+.product-img img{
+    width: 200px;
+}
+
+.product-details{
+    width: 70%;
+}
+
+.cart-button{
+    padding: 1px 30px;
+    background-color: #F0C148;
+    border: 1px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.brand-feature{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.brand{
+    width: 50%;
+}
+
+.feature li{
+    color: gray;
+    font-size: 10px;
+}
