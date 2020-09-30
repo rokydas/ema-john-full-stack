@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import './Shop.css';
 import Product from '../Product/Product';
@@ -7,10 +7,16 @@ import { addToDatabaseCart } from '../../utilities/databaseManager';
 import { Link } from 'react-router-dom';
 
 const Shop = () => {
-    const first10 = fakeData.slice(0, 10);
-    const [products, setProducts] = useState(first10);
+    // const first10 = fakeData.slice(0, 10);
+    const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     // console.log(products[0]);
+
+    useEffect( () => {
+        fetch('http://localhost:5000/products')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [products])
 
     const addButton = (product) => {
         // console.log(product);
